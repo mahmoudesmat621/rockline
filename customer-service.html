@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمة العملاء - روك لاين</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="روك لاين.jpg">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">الصفحة الرئيسية</a></li>
+                <li><a href="index.html#section-112">بروتوكولات</a></li>
+                <li><a href="military-clothes.html">ملابس بحرية تجارية</a></li>
+                <li><a href="customer-service.html">خدمة العملاء</a></li>
+            </ul>
+        </nav>
+        <img src="photo/روك لاين.jpg" alt="لوجو روك لاين" class="company-logo">
+        <h1>خدمة العملاء</h1>
+    </header>
+    <main>
+        <section class="customer-service-section" style="max-width:500px;margin:40px auto;background:#fff;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,0.18);padding:32px 24px 24px 24px;position:relative;overflow:hidden;">
+            <h2 style="text-align:center;font-size:2.1rem;color:#007bff;margin-bottom:18px;letter-spacing:1px;">خدمة العملاء</h2>
+            <p style="text-align:center;color:#444;margin-bottom:24px;font-size:1.1rem;">نحن هنا لمساعدتك! يرجى ملء النموذج أدناه وسنقوم بالرد عليك في أقرب وقت ممكن.</p>
+            <form id="customerServiceForm" class="customer-service-form" style="display:flex;flex-direction:column;gap:18px;">
+                <div style="display:flex;flex-direction:column;gap:6px;">
+                    <label for="name" style="font-weight:600;color:#333;">الاسم</label>
+                    <input type="text" id="name" name="name" required style="padding:10px 12px;border:1.5px solid #007bff;border-radius:7px;font-size:1rem;transition:box-shadow .2s;outline:none;">
+                </div>
+                <div style="display:flex;flex-direction:column;gap:6px;">
+                    <label for="email" style="font-weight:600;color:#333;">البريد الإلكتروني</label>
+                    <input type="email" id="email" name="email" required style="padding:10px 12px;border:1.5px solid #007bff;border-radius:7px;font-size:1rem;transition:box-shadow .2s;outline:none;">
+                </div>
+                <div style="display:flex;flex-direction:column;gap:6px;">
+                    <label for="message" style="font-weight:600;color:#333;">وصف المشكلة أو الاستفسار</label>
+                    <textarea id="message" name="message" rows="5" required style="padding:10px 12px;border:1.5px solid #007bff;border-radius:7px;font-size:1rem;resize:vertical;transition:box-shadow .2s;outline:none;"></textarea>
+                </div>
+                <button type="submit" style="background:linear-gradient(90deg,#007bff 0%,#0056b3 100%);color:#fff;font-size:1.2rem;padding:12px 0;border:none;border-radius:8px;box-shadow:0 2px 8px rgba(0,123,255,0.13);cursor:pointer;transition:background .2s,transform .1s;letter-spacing:1px;">
+                    <span style="display:inline-block;transition:transform .2s;">إرسال</span>
+                </button>
+                <input type="hidden" name="_subject" value="رسالة جديدة من خدمة العملاء - روك لاين">
+                <input type="hidden" name="_language" value="ar">
+                <div id="formStatus" style="text-align:center;color:#28a745;margin-top:10px;font-size:1rem;display:none;"></div>
+            </form>
+            <script>
+            document.getElementById('customerServiceForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var form = e.target;
+                var data = new FormData(form);
+                var status = document.getElementById('formStatus');
+                status.style.display = 'none';
+                // إرسال إلى الرابط الأول
+                fetch('https://formspree.io/f/mwprnbaq', {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                }).then(function(response) {
+                    // إرسال إلى الرابط الثاني
+                    fetch('https://formspree.io/f/mblzaygq', {
+                        method: 'POST',
+                        body: data,
+                        headers: { 'Accept': 'application/json' }
+                    }).then(function(resp2) {
+                        status.textContent = 'تم إرسال رسالتك بنجاح!';
+                        status.style.display = 'block';
+                        form.reset();
+                    }).catch(function() {
+                        status.textContent = 'تم إرسال الرسالة للرابط الأول فقط.';
+                        status.style.display = 'block';
+                    });
+                }).catch(function() {
+                    status.textContent = 'حدث خطأ أثناء الإرسال، يرجى المحاولة لاحقاً.';
+                    status.style.display = 'block';
+                });
+            });
+            </script>
+            <div style="text-align:center;margin-top:22px;">
+                <span style="color:#888;font-size:1rem;">أو راسلنا مباشرة على البريد:</span>
+                <a href="mailto:Rocklineshipping.eg@gmail.com" style="color:#007bff;font-weight:600;direction:ltr;display:inline-block;margin-top:4px;">Rocklineshipping.eg@gmail.com</a>
+                <p style="color:#28a745;font-size:1.05rem;margin-top:10px;">سيتم إرسال رسالتك مباشرة إلى البريد عند الضغط على إرسال.</p>
+            </div>
+            <div style="position:absolute;top:-60px;right:-60px;width:140px;height:140px;background:linear-gradient(135deg,#007bff 60%,#0056b3 100%);opacity:0.13;border-radius:50%;z-index:0;"></div>
+            <div style="position:absolute;bottom:-60px;left:-60px;width:140px;height:140px;background:linear-gradient(135deg,#007bff 60%,#0056b3 100%);opacity:0.13;border-radius:50%;z-index:0;"></div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

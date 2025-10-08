@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بروتوكولات القاهرة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="روك لاين.jpg">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">الصفحة الرئيسية</a></li>
+                <li><a href="index.html#section-112">بروتوكولات</a></li>
+                <li><a href="military-clothes.html">ملابس بحرية تجارية</a></li>
+                <li><a href="customer-service.html">خدمة العملاء</a></li>
+            </ul>
+        </nav>
+        <img src="photo/روك لاين.jpg" alt="لوجو الشركة" class="company-logo">
+    <h1>بروتوكولات القاهرة</h1>
+    </header>
+    <main>
+        <div style="text-align:center;margin-bottom:18px;">
+            <button onclick="history.back()" class="btn-back">العودة للقائمة السابقة</button>
+        </div>
+        <section id="section-112">
+            <h2>بروتوكولات محافظة القاهرة</h2>
+            <div class="category-tabs">
+                <button class="category-tab active" onclick="showCategoryTab(event, 'entertainment')">القسم الترفيهي</button>
+                <button class="category-tab" onclick="showCategoryTab(event, 'medical')">القسم الطبي</button>
+            </div>
+            <div id="entertainment" class="category-tabs-content">
+                <div class="products-list empty-list">
+                    <div class="empty-message">لا يوجد بروتوكولات ترفيهية حالياً.</div>
+                </div>
+            </div>
+            <div id="medical" class="category-tabs-content" hidden>
+                <div class="products-list">
+                    <div class="product-card">
+                        <div class="product-discount">خصم 40%</div>
+                        <div class="product-img-wrap">
+                            <img src="photo/ansary.jpg" alt="مختبر الأنصاري" class="product-img">
+                        </div>
+                        <div class="product-title">مختبر الأنصاري</div>
+                        <div class="product-info">
+                            <div class="product-desc">
+                                <strong>الفروع والعناوين:</strong><br>
+                                <hr>
+                                <b>فرع المعادى (1):</b> 69 شارع 9 المعادى بجوار بنك CIB الدور الثانى<br>
+                                يمكنك التواصل: 01270534723
+                                <hr>
+                                <b>فرع المعادي (2):</b> 149 شارع النصر – الدور الثانى – اعلى دهانات جوتن – ميدان الجزائر – المعادي الجديدة<br>
+                                يمكنك التواصل: 01280136798
+                                <hr>
+                                <b>فرع السيدة زينب:</b> 6 شارع المريس- الدور الاول – امام استقبال مستفى ابو الريش للاطفال<br>
+                                يمكنك التواصل: 01223987550
+                                <hr>
+                                <b>فرع شبرا:</b> 60 شارع شبرا - تقاطع شارع مسره - الدور الارضي (داخل ساحة بنك قناة السويس)<br>
+                                يمكنك التواصل: 01273394221
+                                <hr>
+                                <b>فرع مدينة نصر:</b> 13 شارع مصطفى النحاس – الدور الثالث<br>
+                                يمكنك التواصل: 01119117194
+                                <hr>
+                                <b>فرع مصر الجديدة:</b> 27 أ شارع بغداد الكوربة – الدور الرابع<br>
+                                يمكنك التواصل: 01273388986
+                                <hr>
+                                <b>فرع التجمع:</b> مول ذا فونت - القطعة رقم 28 عيادة 201 شارع 90 الشمالي خلف جامعة المستقبل -خلف كومبوند فيلار<br>
+                                يمكنك التواصل: 01218136538
+                                <hr>
+                                <b>فرع حلوان:</b> 41 شارع مصطفى فهمي – تقاطع شارع رايل – اعلى سنتر شاهين – برج الأمان الدور الأول<br>
+                                يمكنك التواصل: 01281134856
+                                <hr>
+                                <b>فرع المقطم:</b> 399 شارع 9 – بجوار بنك كريدى اجريكول – الدور الأول – شقة 12<br>
+                                يمكنك التواصل: 01283920738
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
