@@ -17,4 +17,14 @@ function showCategoryTab(event, tabName) {
 window.addEventListener('DOMContentLoaded', function() {
     document.getElementById('entertainment').hidden = false;
     document.getElementById('medical').hidden = true;
+    // سلايدر صور البدل
+    var slides = document.querySelectorAll('.suits-slider .suit-slide');
+    var current = 0;
+    if (slides.length > 0) {
+        setInterval(function() {
+            slides[current].style.display = 'none';
+            current = (current + 1) % slides.length;
+            slides[current].style.display = 'block';
+        }, 900);
+    }
 });
